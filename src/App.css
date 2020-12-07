@@ -10,3 +10,7 @@ body {
     padding: 0;
 }
 
+.leaflet-container {
+    height: 400px;
+    width: 100%;
+}
