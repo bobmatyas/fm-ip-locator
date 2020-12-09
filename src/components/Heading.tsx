@@ -5,10 +5,10 @@ import styled from 'styled-components';
 const SiteHeader = styled.h1`
   color: #fff;
   font-family: 'Rubik', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 500;
   margin: 0;
-  padding: 35px 0;
+  padding: 30px 0 20px 0;
   text-align: center;
 `;
 

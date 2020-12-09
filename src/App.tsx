@@ -3,7 +3,17 @@ import './App.css';
 import Header from './components/Header';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import { LatLngTuple } from 'leaflet';
+import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+`;
+
+const MapWrapper = styled.div`
+
+`;
 
 function App() {
 
@@ -11,11 +21,10 @@ function App() {
   const zoom:number = 8;
 
   return (
-    <>
+    <Wrapper>
+  
     <Header />
     
-    <div>
-
     <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
     <TileLayer
       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -27,8 +36,7 @@ function App() {
       </Popup>
     </Marker>
   </MapContainer>
-  </div>
-    </>
+  </Wrapper>
   );
 }
 
