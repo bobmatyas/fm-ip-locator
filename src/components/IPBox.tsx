@@ -15,7 +15,8 @@ const IPHolder = styled.div`
 function IPBox() {
   return (
     <IPHolder>
-      <IPBoxHeading />
+      <IPBoxHeading heading={"IP Address"} value={"127.0.0.1"} />
+
     </IPHolder>
   );
 }
