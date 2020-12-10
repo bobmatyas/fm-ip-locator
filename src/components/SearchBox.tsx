@@ -10,7 +10,7 @@ const Search = styled.input`
     padding: 20px 25px;
     width: 325px;
 
-    :placeholder {
+    ::placeholder {
       font-size: 1.6rem;
     }
 

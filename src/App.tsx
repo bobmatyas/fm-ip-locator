@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
+import IPBox from './components/IPBox';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import { LatLngTuple } from 'leaflet';
 import styled from 'styled-components';
@@ -11,21 +12,18 @@ const Wrapper = styled.div`
   height: 100vh;
 `;
 
-const MapWrapper = styled.div`
-
-`;
-
 function App() {
 
   const position: LatLngTuple = [48.865572, 2.283523];
-  const zoom:number = 8;
+  const zoom:number = 17;
 
   return (
     <Wrapper>
   
     <Header />
     
-    <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+    <IPBox />
+    <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
     <TileLayer
       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

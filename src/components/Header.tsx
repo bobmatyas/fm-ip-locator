@@ -10,6 +10,7 @@ const SiteHeader = styled.header`
     height: 30vh;
     margin: 0;
     padding: 0 5%;
+    position: relative;
     text-align: center;
 `;
 
