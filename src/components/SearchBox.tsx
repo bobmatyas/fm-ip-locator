@@ -49,7 +49,7 @@ function SearchBox() {
     <>
     <IPLabel htmlFor="ipSearch">{placeholder}</IPLabel>
     <Search id="ipSearch" placeholder={placeholder}  />
-    <SearchButton><img src={Arrow}></img></SearchButton>
+    <SearchButton><img src={Arrow} alt="Search"></img></SearchButton>
     </>
   );
 }
