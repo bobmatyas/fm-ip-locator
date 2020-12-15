@@ -15,6 +15,10 @@ const Search = styled.input`
       font-size: 1.6rem;
     }
 
+    @media(min-width: 900px) {
+      width: 500px;
+    }
+
 `;
 
 const IPLabel = styled.label`
