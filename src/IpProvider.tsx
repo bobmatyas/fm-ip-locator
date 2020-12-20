@@ -2,7 +2,11 @@ import React, { createContext, useState, useContext } from "react";
 const IpContext = createContext({});
 export const useIpContext = () => useContext(IpContext);
 
-export default function IpProvider ({ children:any }) {
+type Props = {
+    children: React.ReactNode
+  };
+
+export default function IpProvider ({ children }:Props) {
     
     const [ipAddress, setipAddress ] = useState([]);
 
