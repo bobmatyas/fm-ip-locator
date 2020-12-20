@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Arrow from '../images/icon-arrow.svg';
 
@@ -49,12 +49,41 @@ const SearchButton = styled.button`
 const placeholder = `Search for any IP address or domain`
 
 function SearchBox() {
+
+  const [search, setSearch] = useState('');
+  const [placeHolder, setPlaceholder] = useState('Search for any IP Address or Domain');
+  const [data, setData] = useState('');
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
+
+  const API_KEY = process.env.REACT_APP_IP;
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    if (!event.target.elements.ipSearch.value) { return } 
+    let searchValue:string = event.target.elements.ipSearch.value;
+    let ipValueToSearch:string = `https://geo.ipify.org/api/v1?apiKey=${API_KEY}&ipAddress=${searchValue}`
+    setPlaceholder(searchValue);
+    setSearch(ipValueToSearch);    
+  }
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(search)
+      .then(data => data.json())
+      .then(setData)
+      .then(() => setLoading(false))
+      .catch(setError);
+    }, [search, API_KEY]);
+
+
+
   return (
-    <>
-    <IPLabel htmlFor="ipSearch">{placeholder}</IPLabel>
-    <Search id="ipSearch" placeholder={placeholder}  />
+    <form onSubmit={handleSubmit}>
+    <IPLabel htmlFor="ipSearch">{placeHolder}</IPLabel>
+    <Search id="ipSearch" placeholder={placeHolder} />
     <SearchButton><img src={Arrow} alt="Search"></img></SearchButton>
-    </>
+    </form>
   );
 }
 
